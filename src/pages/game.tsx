@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router";
-import { Board } from "./board"
-import { GameStatus } from "./gameStatus"
+import { Board } from "../components/board"
+import { GameStatus } from "../components/gameStatus"
 import { useEffect } from "react";
 import { useGameState } from "../state/gameState";
 
@@ -14,8 +14,7 @@ export const Game = () => {
     }, [aiPlayer, navigate]);
 
     return (
-        <div>
-            <h1> Tic Tac Toe</h1>
+        <div className="flex flex-col items-center">
             <Board />
             <GameStatus />
         </div>

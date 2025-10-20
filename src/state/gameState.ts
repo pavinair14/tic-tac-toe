@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { getWinner } from "../utils/gameLogic";
 import { findBestMove } from "../utils/aiLogic";
 
-export type Player = "X" | "O";
+export type Player = "X" | "O" | null;
 export type CellValue = Player | null;
 
 
@@ -20,7 +20,7 @@ type GameStateType = {
 
 export const useGameState = create<GameStateType>((set, get) => ({
     board: Array(9).fill(null),
-    currentPlayer: 'X',
+    currentPlayer: null,
     aiPlayer: null,
     vsAI: false,
     winner: null,
